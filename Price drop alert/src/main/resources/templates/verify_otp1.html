@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  th:href="@{/CSS/style.css}">
+    <!-- <script src="https://kit.fontawesome.com/75af221db3.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <title>OTP verification - PRICEDROP ALERT WEBSITE</title>
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo lg-heading" >PRICEDROP</h1>
+            <ul>
+                <li class="nav-item"><a th:href="@{/}">Home</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="form-container">
+        <div th:if="${session.message}" class="alert alert-primary text-center" th:classappend="${session.message.type}" role="alert">
+            <p class="text-center" th:text="${session.message.content}"></p>
+            <div th:if="${session.message != null}">
+                <!-- I consumed the message -->
+                <div th:text="${@sessionHelper.removeMessageFromSession()}">
+                </div>
+            </div>
+        </div>
+        <form id="loginForm" class="form" th:action="@{/verify-otp}" th:method="post">
+            <h1 class="otp">OTP Verification</h1>
+            <h3 class="otp_text">We have Sent OTP to your Email</h3>
+
+            <div class="form-group1">
+
+                <label style="font-size: 17px;padding-bottom: 1px">Enter OTP:</label>
+                <input type="number" name="otp" style="width: 350px" id="enter_otp" placeholder="Enter your otp" required>
+                <br>
+
+            </div>
+            <button class="verify-btn" type="submit">Verify Otp</button>
+        </form>
+    </div>
+
+</header>
+
+
+</body>
+
+</html>

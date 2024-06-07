@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify OTP</title>
+</head>
+<body>
+<br>
+<h1>OTP verification:- </h1><br>
+
+<div th:if="${session.message}" class="alert alert-primary text-center" th:classappend="${session.message.type}" role="alert">
+    <p class="text-center" th:text="${session.message.content}"></p>
+    <div th:if="${session.message != null}">
+        <!-- I consumed the message -->
+        <div th:text="${@sessionHelper.removeMessageFromSession()}">
+        </div>
+    </div>
+</div>
+<br>
+<h4>Enter OTP</h4><br>
+<form action="" th:action="@{/verify-otp}" th:method="post">
+    <input type="number" name="otp" placeholder="Enter OTP">
+    <button type="submit">VERIFY OTP</button>
+</form>
+</body>
+</html>

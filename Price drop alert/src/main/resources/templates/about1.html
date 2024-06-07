@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="./style.css" th:href="@{/CSS/style.css}">
+    <script src="https://kit.fontawesome.com/75af221db3.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo lg-heading" >PRICEDROP</h1>
+            <ul >
+                <li class="nav-item"><a th:href="@{/}">Home</a></li>
+                <li class="nav-item"><a th:href="@{/about}">About</a></li>
+                <li class="nav-item"><a th:href="@{/signin}">Login</a></li>
+                <li class="nav-item"><a th:href="@{/signup}">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header-content">
+        <h1 class="lg-heading text-black">Price Drop Alert</h1>
+        <p class="text-black"> "Get instant notifications on price drops for your favorite products." </p>
+        <a class="text-blue btn btn-primary med-heading" href="#explore-places">More Info</a>
+    </div>
+</header>
+
+
+<section class="about-section">
+    <div class="container">
+        <h2 class="med-heading text-black">About Price Drop Alert</h2>
+        <p class="text-black">
+            Price Drop Alert is your go-to platform for tracking and monitoring the prices of your favorite products on Amazon.
+            We understand the importance of getting the best deals, and that's why we provide a simple and efficient solution to keep you informed about price drops.
+        </p>
+        <p class="text-black">
+            How it works:
+        </p>
+        <ol>
+            <li>Sign up for a Price Drop Alert account.</li>
+            <li>Choose the products you want to track by adding them to your watchlist.</li>
+            <li>We continuously monitor the prices of the products on Amazon.</li>
+            <li>If there is a price drop, we'll notify you via email, ensuring you never miss a great deal!</li>
+        </ol>
+        <p class="text-black">
+            At Price Drop Alert, our mission is to help you save money and make informed purchasing decisions. Start using Price Drop Alert today and enjoy the thrill of finding the best deals!
+        </p>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-row">
+        <div class="col">
+            <!-- <img src="./Picture3.png" class="footer-logo"> -->
+            <p id="footerp">Price History is a free tool to check price history charts for millions of products. With our advanced Price Tracker you can track price for popular Indian stores such as Amazon, Flipkart, Myntra, Ajio, Croma & many more.</p>
+        </div>
+        <div class="col2">
+            <h3>PRICEDROP </h3>
+            <p>Features</p>
+
+            <p class="email-id">prciedrop@email.com</p>
+            <h4>+91-0101202030</h4>
+        </div>
+        <div class="col">
+            <h3 style="font-weight: bold;">Links</h3>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./contactus.html">Contact Us</a></li>
+                <li><a href="">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3 style="font-weight: bold;">Newsletter</h3>
+            <form class="footer-form">
+                <i class="far fa-envelope"></i>
+                <input type="email" placeholder="Enter E-mail" required>
+                <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-whatsapp"></i>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p class="copyright">Price Drop Alert © 2024 - All Rights Reserved</p>
+</footer>
+
+</body>
+
+</html>

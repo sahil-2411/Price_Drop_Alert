@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  th:href="@{/CSS/style.css}">
+    <script src="https://kit.fontawesome.com/75af221db3.js" crossorigin="anonymous"></script>
+    <title>Register - PRICEDROP ALERT WEBSITE</title>
+    <style>
+        .in{
+            margin-left: 10%;
+            width: 60%;
+        }
+        .bu{
+            align-content: center;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo lg-heading" >PRICEDROP</h1>
+            <ul>
+                <li class="nav-item"><a th:href="@{/}">Home</a></li>
+                <li class="nav-item"><a th:href="@{/about}">About</a></li>
+                <li class="nav-item"><a th:href="@{/signin}">Login</a></li>
+                <li class="nav-item"><a th:href="@{/signup}">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Registration Form -->
+    <div class="form-container">
+        <form action="" th:action="@{/sendOTP}" class="forms" method="post" th:object="${user}" >
+            <h2 class="login-intro">Register</h2>
+            <div style="margin-top: -10px" th:if="${session.message}" class="alert alert-primary text-center" th:classappend="${session.message.type}" role="alert">
+                <p class="text-center message" th:text="${session.message.content}"></p>
+                <div th:if="${session.message != null}">
+                    <!-- I consumed the message -->
+                    <div th:text="${@sessionHelper.removeMessageFromSession()}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group1">
+                <label >Name:</label>
+                <input type="text" class="in" name="username"
+                       id="registerName" th:classappend="${#fields.hasErrors('username') ? 'is-invalid' : ''}"
+                       placeholder="Enter your Name" required  th:value="${user.username}">
+            </div>
+            <div  class="invalid-feedback" style="margin-left: 30%;margin-top: -6%;font-weight: bold;color: red;margin-bottom: 10px"
+                  th:each="e : ${#fields.errors('username')}" th:text="${e}"></div>
+
+
+            <div class="form-group1">
+                <label >Mobile no.:</label>
+                <input type="number" class="in" th:classappend="${#fields.hasErrors('mno') ? 'is-invalid' : ''}"
+                       name="mno"  id="registerPhone" th:value="${user.mno}" placeholder="Enter your Phone"required>
+            </div>
+            <div  class="invalid-feedback" style="margin-left: 30%;margin-top: -6%;font-weight: bold;color: red;margin-bottom: 10px"
+                  th:each="e : ${#fields.errors('mno')}" th:text="${e}"></div>
+
+
+
+            <div class="form-group1">
+                <label >Email:</label>
+                <input type="email" class="in"  name="email" th:classappend="${#fields.hasErrors('email') ? 'is-invalid' : ''}"
+                       id="registerEmail"placeholder="Enter your E-mail" th:value="${user.email}" required>
+            </div>
+            <div  class="invalid-feedback" style="margin-left: 30%;margin-top: -6%;font-weight: bold;color: red;margin-bottom: 10px"
+                  th:each="e : ${#fields.errors('email')}" th:text="${e}"></div>
+
+            <div class="form-group1">
+                <label >Password:</label>
+                <input type="password" class="in"  th:classappend="${#fields.hasErrors('email') ? 'is-invalid' : ''}"
+                       name="password" id="registerPassword" th:value="${user.password}" placeholder="Enter your password"required>
+            </div>
+            <div  class="invalid-feedback" style="margin-left: 30%;margin-top: -6%;font-weight: bold;color: red;margin-bottom: 30px"
+                  th:each="e : ${#fields.errors('password')}" th:text="${e}"></div>
+
+            <!-- <div class="form-group1">
+                <input type="checkbox" id="termsCheckbox" required>
+                <label for="termsCheckbox" >I agree to the Terms and Conditions</label>
+            </div> -->
+            <button class="bu" type="submit">Register</button>
+        </form>
+    </div>
+
+
+</header>
+
+<!--
+ <script src="script.js"></script> -->
+</body>
+</html>

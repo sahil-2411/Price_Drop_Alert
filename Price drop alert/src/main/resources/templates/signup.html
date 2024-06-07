@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+</head>
+<body>
+<section style="margin: auto; width: 400px; margin-top: 100px">
+
+    <!-- Display message about OTP sent -->
+    <div th:if="${session.message}" class="alert alert-primary text-center" th:classappend="${session.message.type}" role="alert">
+        <p class="text-center" th:text="${session.message.content}"></p>
+        <div th:if="${session.message != null}">
+            <!-- I consumed the message -->
+            <div th:text="${@sessionHelper.removeMessageFromSession()}">
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <b>SIGN UP </b>
+    <br>
+    <form action="" th:action="@{/sendOTP}" method="post" th:object="${user}">
+        <form>
+            <label>Email - Id :- </label>
+            <input type="email" name="email" required/>
+            <br>
+            <label>Username :- </label>
+            <input type="test" name="username" required/>
+            <br>
+
+            <label>Password :- </label>
+            <input type="password" name="password" required/><br>
+
+            <label>Mobile no :- </label>
+            <input type="number" name="mno" required/><br>
+
+            <button type="submit" name="send_otp">Send OTP</button> <!-- Button to send OTP -->
+
+        </form>
+        <br>
+        <br>
+        <a th:href="@{/}"> home </a>
+</section>
+</body>
+</html>

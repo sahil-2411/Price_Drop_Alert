@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" th:href="@{/CSS/style.css}">
+    <script src="https://kit.fontawesome.com/75af221db3.js" crossorigin="anonymous"></script>
+    <title>PRICEDROP ALERT WEBSITE</title>
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo lg-heading" >PRICEDROP</h1>
+            <ul >
+                <li class="nav-item"><a th:href="@{/}">Home</a></li>
+                <li class="nav-item"><a th:href="@{/about}">About</a></li>
+                <li class="nav-item"><a th:href="@{/signin}">Login</a></li>
+                <li class="nav-item"><a th:href="@{/signup}">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+<div class="header-content">
+    <h1 class="lg-heading text-black">Price Drop Alert</h1>
+    <p class="text-black"> "Get instant notifications on price drops for your favorite products." </p>
+    <a class="text-blue btn btn-primary med-heading" href="#explore-places">More Info</a>
+</div>
+<section class="showcase" id="explore-places">
+
+
+    <div class="container">
+        <div class="row row1">
+            <div class="imgbox">
+                <img th:src="@{../img/fam.png}" alt="img">
+            </div>
+            <div class="textbox">
+                <h1 class="med-heading text-black">Get Price Alerts</h1>
+                <p class="text-black">
+                    Do you want to get the lowest overall price on your next big purchase? <br>
+                    This is where Price.com’s revolutionary price alerts come in. Get price alerts when retailers slash their prices to maximize your savings.
+                    <br>
+                    While other price watcher tools have similar functions, Price uses the power of data to ensure you really are getting the best price. In this guide, we’ll discuss how Price’s target price tracker works and how it’s changing the way everyday people shop online. </p>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <section id="products">
+        <h2 class="product-title"> Set Price Alerts for Products </h2>
+        <div class="product-container container">
+            <div class="product-box">
+                <div class="star-rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <p class="product-text">
+                    Apple Earbuds 3
+                </p>
+                <div class="product-details">
+                    <div class="product-photo">
+                        <img th:src="@{../img/pd1.jpg}" alt="">
+                        <p class="product-price">Price Now: &#8377;3000</p>
+                        <p class="product-price">Price Alert: &#8377;1600</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="product-box">
+                <div class="star-rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <p class="product-text">
+                    Abc Moisturizer
+                </p>
+                <div class="product-details">
+                    <div class="product-photo">
+                        <img th:src="@{../img/pd2.jpg}" alt="">
+                        <p class="product-price">Price Now: &#8377;1000</p>
+                        <p class="product-price">Price Alert: &#8377;600</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="product-box">
+                <div class="star-rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <p class="product-text">
+                    Gucci Rhyton Shoes
+                </p>
+                <div class="product-details">
+                    <div class="product-photo">
+                        <img th:src="@{../img/shoes.jpg}" alt="">
+                        <p class="product-price">Price Now: &#8377;2000</p>
+                        <p class="product-price">Price Alert: &#8377;1500</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- <footer>
+        <div class="foot-panel1">
+            Back to Top
+        </div>
+        <div class="foot-panel2">
+         <ul>
+            <p>Get to Know Us</p>
+            <a>Careers</a>
+            <a>Blog</a>
+            <a>About Amazon</a>
+            <a>Amazon Devices</a>
+            <a>Amazon Science</a>
+         </ul>
+         <ul>
+            <p>Make money with us</p>
+            <a>Sell products on Amazon</a>
+            <a>Sell on amazon business</a>
+            <a>Sell apps on Amazon</a>
+            <a>Amazon Devices</a>
+            <a>Sell Publish with us</a>
+            <p>Host an amazon hub</p>
+
+
+         </ul>
+         <ul>
+            <p>Amazon Payments Products</p>
+            <a>Amazon Business Card</a>
+            <a>Shop with Points</a>
+            <a>Reload your Balance</a>
+            <a>Amazon Currency Convertor</a>
+
+         </ul>
+         <ul>
+            <p>Let Us Help You</p>
+            <a>Your Account </a>
+            <a>Your Orders</a>
+            <a>Skipping Rates and Policies</a>
+            <a>Returns and Replacements</a>
+            <a>Manage Your Contents and Devices</a>
+            <a>Help</a>
+         </ul>
+        </div>
+        <div class="footpanel3">
+            <div class="logo"></div>
+        </div>
+       </footer> -->
+
+    <footer>
+        <div class="footer-row">
+            <div class="col">
+                <!-- <img src="./Picture3.png" class="footer-logo"> -->
+                <p id="footerp">Price History is a free tool to check price history charts for millions of products. With our advanced Price Tracker you can track price for popular Indian stores such as Amazon, Flipkart, Myntra, Ajio, Croma & many more.</p>
+            </div>
+            <div class="col2">
+                <h3>PRICEDROP </h3>
+                <p>Features</p>
+
+                <p class="email-id">prciedrop@email.com</p>
+                <h4>+91-0101202030</h4>
+            </div>
+            <div class="col">
+                <h3 style="font-weight: bold;">Links</h3>
+                <ul>
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contactus.html">Contact Us</a></li>
+                    <li><a href="">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="col">
+
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Price Drop Alert © 2024 - All Rights Reserved</p>
+    </footer>
+</section>
+
+</body>
+</html>

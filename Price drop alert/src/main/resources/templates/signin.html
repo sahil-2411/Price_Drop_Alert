@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  th:href="@{/CSS/style.css}">
+    <!-- <script src="https://kit.fontawesome.com/75af221db3.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <title>Login - PRICEDROP ALERT WEBSITE</title>
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo lg-heading" >PRICEDROP</h1>
+            <ul>
+                <li class="nav-item"><a th:href="@{/}">Home</a></li>
+                <li class="nav-item"><a th:href="@{/about}">About</a></li>
+                <li class="nav-item"><a th:href="@{/signin}">Login</a></li>
+                <li class="nav-item"><a th:href="@{/signup}">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="form-container">
+        <form id="loginForm" th:action="@{/dologin}" method="post" class="form">
+            <h2 class="login-intro">Login</h2>
+
+            <div style="width: 90%;text-align: center;margin-bottom: 2%;margin-top: -20px" th:if="${param.logout}" class="alert alert-success">
+                <h1 style="font-weight: bold;padding-top: 10px">You Have Been Logout !!</h1>
+            </div>
+
+            <div th:if="${session.message}"   class="alert alert-primary text-center" th:classappend="${session.message.type}" role="alert">
+                <p class="text-center" th:text="${session.message.content}"></p>
+                <div th:if="${session.message != null}">
+                    <!-- I consumed the message -->
+                    <div th:text="${@sessionUtilityBean.removeMessageFromSession()}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group1">
+                <!-- <i class="uil uil-envelope-alt email fa-3x"></i> -->
+                <label style="margin-left: 10%">Email:</label>
+                <input type="email" name="username" id="username"
+                       style="margin-left: 10px"
+                       placeholder="Enter your email" required>
+                <!-- <input type="email" id="loginEmail" placeholder="Enter your email" required /> -->
+
+
+            </div>
+            <div class="form-group1">
+                <!-- <i class="uil uil-lock password fa-3x"></i> -->
+                <label style="margin-left:auto">Password:</label>
+                <input type="password" name="password" placeholder="Enter your password"
+                       style="margin-left: 20px; width:250px; " required>
+                <!-- <input type="password" id="loginPassword" placeholder="Enter your password" required /> -->
+
+
+            </div>
+            <button style="width: 50%;" type="submit">Login</button>
+            <br>
+            <div class="form-group1">
+                <p id="Intro2">Not a member? <a th:href="@{/signup}" id="Intro2sign">Sign up</a></p>
+            </div>
+        </form>
+    </div>
+
+</header>
+
+
+
+<!-- <script src="script.js"></script> -->
+</body>
+</html>
